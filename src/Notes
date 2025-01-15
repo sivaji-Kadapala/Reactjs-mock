@@ -1,1 +1,2382 @@
-Notes : https://docs.google.com/document/d/1oTb7LBSFxauBmfikdG5YW-8AAEJoZ8e8LSVAlE2EUmw/edit?usp=drivesdk
+MVC = Model View Controller
+		React is V 'View'
+		architecture (Redux or Flux)
+
+React is a JS library used to build user Interfaces for web Application.
+
+key points:
+=> open source JS Library
+=>Focus only on UI
+=>Not a framework
+
+
+		React ==> Web Application                  Angular => web Application
+		React Native ==> Mobile Application        Ionic => mobile Application		
+	
+
+angular 8(Framework)== real DOM / browser DOM
+React JS (Library) == virtual DOM --- real DOM
+
+framework: [Angular]
+	collection of librariers, functions
+	more rules
+	only do certain task
+	it calls ur code
+ex: Angular, Vue Js, Flutter	
+	
+	
+Library: [react JS]
+	collection of reusable apps / collection of codes(i.e class & interfaces)
+	less rules
+	only do single task
+	full control when it is calling a method.
+ex: React , Ember, backbone, Jquery	
+
+user Interfaces :
+		Basically what the user sees.
+		It uses the components for building
+	
+NativeScript : to create IOS & android Applications using JS.
+
+			Native Apps (faster)
+			hybrid Apps  (slower)
+			
+		Native App ==> React Native
+					   Native Script
+						
+SSR :
+	first page loads, we will get the skeleton,  then the actual content occurs.
+
+
+Node Js: Runtime Environment which helps the JS code to run on Server Side.
+		 
+		
+		npm(node package manager) ==> collection of libraries
+	
+		
+=> cross platfrom , runtime environment, helps to run the JS code outside browser
+	it helps run the code  on the server side
+	
+	It uses V8 engine
+	
+cross platfrom:
+				runned on any operating Systems.
+				supports the Asynchronous callback
+	
+		
+PlayStore: (Developer and User) 
+install application, anyone can install, google developer, users can use it, 
+developer can add apps	
+					
+npm: (Developer and Developer)
+install libraries, anyone can install, developer developed, developer used,
+developer can push/pull
+
+
+Note:
+npm: creates the same version which was installed globally
+npx: creates the latest version & downloads the latest  plugins
+
+npm installation: 2 types 
+globally : npm install bootstrap -g 
+locally  : npm install bootstrap
+
+node -v
+npm -v
+
+
+=====================================================================================
+
+React (react@17): It is a open source JS library to develop a user interface on
+				web application
+					It is component based.
+					its funtionality is utilized in Web and Mobile App
+
+ReactDOM (react-dom@17): Its a glue b/w React and the DOM.
+						 It helps to display the react component in DOM
+						funtionality is utilized in web apps.
+		
+note:
+
+	React - the React top level API
+	React DOM - adds DOM-specific methods
+	Babel - a JavaScript compiler that lets us use ES6+ in old browsers
+
+
+
+		
+React Native : Its a Technology to build mobile Applications on Android & IOS
+
+====================================================================================
+
+SPA: (React)                                      MPA:
+
+	only one html								multiple html pages
+	content is rendered on client               content is rendered on server
+
+
+===================================================================================
+
+
+<h1>Hello World</h1>
+
+React.createElement("h1", null, "Hello World")
+
+Assignment 1: (code in js)
+<ul> Languages:                      Languages:
+<li>JavaScript</li>                  . JavaScript
+<li>React JS</li>				     . react jS
+</ul>
+
+===========================================================================
+JSX:(javascript xml) 
+	
+	-> JSX tags have a tag name, attributes & children
+    -> JSX makes code simpler & elegant
+	-> Later JSX transpiles to the pure JS
+	
+				const test = <h1>Hello World</h1>
+
+without JSX:
+			const ele = React.createElement("h1", null,"Hello world");
+                        
+			Syntax:	React.createElement("Specifies html tag", Optional properties,"Chldren for the tag");
+
+Note:
+	second parameter is always a key & value pair
+    ex: {id:'demo', className:'dummyClass}
+
+with JSX:
+			const ele = <h1 className="demo"> Hello World</h1>;
+			
+Note:
+	class => className
+	for => htmlFor
+
+camelCase Property Naming Convention:
+	onclick => onClick
+	tabindex => tabIndex
+
+Updated react link on changes: 
+https://github.com/facebook/react/issues/13525
+
+=======================================================================
+Installation Adds:
+
+1.Development Server (lighweight) ==> server name: webpack-dev-server (By Default)
+2.Webpack (for Bundling the files)
+3.Babel (for Compiler)
+4.All the 3rd party libraries
+
+
+
+DOM Elements ==  React.createElement()
+React Elements == JSX
+
+React Elements == JSX
+			==============babel===========
+					DOM elements = React.createElement()
+
+
+==========================================================================
+Components:
+
+Basically Application has 5 components:
+	1.Header
+	2.SideNav --> LeftSide & RightSide
+	3.Main Content
+	4.Footer
+	5.Root(App)Component
+
+=> They describe a part of the user interface
+=> They are the building blocks of the UI
+=> Re-usuable & can be nested inside the other components
+
+
+ Two types:
+ 1.Function components / state-less
+ 2.Class Components   / state - full
+ 
+ 1.Functional Components:
+   *) JS Functions,return regular html.
+ 
+		properties(props)-----> JS Function ----> HTML (JSX)
+ 
+  lets see example
+ 
+ 2.Class Components:
+  *) class extends the component class with render & return
+	
+ -> They are ES6 class.
+		
+		properties(props)-----> ES6 Classes ----> HTML (JSX)
+								 (state)
+ lets see example
+ 
+ i)Creating a Class Components:
+ ->Component name should be in Uppercase
+ ->Extends a React.Component
+ ->component requires a render()
+ -> and this method returns HTML
+ 
+ 
+ ii.Component constructor in Class Component:
+ ->constructor() function will be called when the component gets initiated.
+ ->Inside constructor(props) function you can initiate the properties.
+ ->The component property should be kept in a object called State
+ ->super() statement: 
+		It executes the  parent component constructor function, the component has
+		access to all the functions of Parent Component.(React.Component)
+
+			ex: constructor(){
+				super();
+				}
+				
+Difference:
+
+Functional Comp                         class Comp
+
+->simple functions                    ->More feature rich
+->use as much as possible			  ->Maintain own private data - state	
+->Absence of this keyword			  ->Complex UI Logic
+->solution without using state		  ->Stateful/Smart/Container
+->Mainly responsible for UI			  
+->Stateless/Dumb/Presentational				
+				
+				
+				
+				
+				
+=================================================================================
+ Modules: exports and imports
+=> split JS code into multiple modules
+=> can import or export from one page of js file to another.
+ 
+Eg: a = 10; 
+		  Export: export a;      	 // have the same name while importing  ==> import a ;    
+				  export default a;  //can have any name while importing  ==>import books;
+ 
+IMPORT:
+		import number from ' /path';                     OR
+		import {Component} from '/path ' ;               OR
+		import {Component as aliasname} from ' ';
+		ex: import {Person alias Employee} from ''
+
+				<Employee />
+
+
+case 1: if export default a;
+		   import number from ' ' ;
+      (if export is with the default keyword, we can have any name for importing)
+ 
+ 
+ 
+case 2:
+		if export a;
+		   export add;      // exporting a variable      const add = (<div> <Person/> </>)														
+		   export App;
+		   	   
+	import add from  '';         			//render: {add}
+	import {add as add1} from '';			//render: {add1}
+	
+if export is with a name, then we can import with the same name using "as" keyword
+which becomes a alias name & then use alias name only to render.
+
+
+case 3:  a=10;
+	     export a;
+		 export add;
+		 export App;
+		 
+	import * as Applications from '';
+		Applications.a;
+		Applications.add();
+		
+If we have exported many values then if we want to import all we use "*" followed by 
+alias name, later we can retrieve them individually using the alias name.
+
+==========================================================================================
+Props:
+
+->props are the object in React that contains properties about the components.
+->It can display the dynamic data within components.
+->React uses 'props' to pass the attributes from parent component to child component. 
+->Props are Immutable
+
+-> React props,
+				function arguments in JS
+				Attributes in HTML
+				
+	1.send the props inside the component  <Person name="Anita" />
+	2. pass data from one component to another component   
+				class CarShed extends R.C {
+				render() {
+					return 	<Car brand="Audi"/>}}
+	
+	3. props as an object
+
+
+
+	{props.library} ===>     library = "React JS"	 
+	{props.message} ===>     message = "Hello"
+    {props.number}  ===>     <Age  number = 2 />     wrong way	
+							  number = {2}           right way
+ 
+Note: 
+ function => props.
+ class => this.props
+ 
+ 
+=========================================================================================
+Assignment: props as destructuring (Add the data dynamically)
+
+function Hello({library, Message}){
+return (
+<div>
+<h1>Welcome to {library}</h1>
+<p> {Message}</p>)
+}
+
+=======================================================================================
+props v/s state:
+
+props:
+		props get passed to the component
+		Function Parameters
+		props are immutable
+		props :- Functional Components
+		this.props :- Class Components
+
+state:
+		state management within the component
+		variables declared in the function body
+		state can be changed
+		useState Hook:- Functional Components
+		this.state:- Class Components
+=======================================================================================
+state:
+
+-> you can store the property values that belongs to the component
+-> when state object changes the component will re-render
+-> can create the dynamic and  interactive components
+-> State is private, it shouldn't be manipulated outside
+-> state is used in render()
+-> state is not used with static components
+->State can only be set inside the constructor
+
+When to use State....?
+
+ message: 'Welcome User' ==========> message:' Thank you for visiting'
+
+this.state = {
+				color:"",
+				brand: ""
+				message: 'Welcone User'
+				}
+
+{this.state.color}, {this.state.brand}, {this.state.message}
+
+to change the state Object:   
+							this.setState()
+
+========================================================================
+Props Validation:
+
+Property name: PropTypes 
+
+Step 1: import PropTypes from 'prop-types' ;
+
+step 2: App.propTypes
+
+		Eg: 		import React, { Component } from 'react';
+					import PropTypes from 'prop-types';
+
+					export default class Greeting extends Component {
+						render() {
+							return (
+								<div>
+									<h1>Hello Mr/ Ms {this.props.name}</h1>
+									<h2>Age: {this.props.age}</h2>
+								</div>
+							)
+						}
+					}
+
+					Greeting.propertyType = {
+						name: PropTypes.string,
+						age: PropTypes.number
+					}
+
+					// Adding the default props
+					//It is called only when there are no props inside the components
+					Greeting.defaultProps = {
+						name: "Stranger!!!",
+						age: "Stranger  has no Age!!"
+					}
+
+=======================================================================================
+Routing:
+
+-> Installation:    npm install react-router-dom --save
+
+->React Router Components:
+	1.Browser Router
+	2.Route
+	3.Link
+	4.Switch
+	
+1. Browser Router: 
+->Its a router implementation which uses the HTML 5 
+ history API(pushState,popState events)
+->helps to keep the UI in sync with URL
+->Parent Component which stores all other components
+		
+2. Route:
+	-> its a coditionally shown component
+	-> It renders  some UI when its path matches with the current URL
+	
+3. Link: Its a component used to create links to different routes and implement
+ the navigation around the application.
+			
+Note:		=> In <a> it allows to refreshing of a page
+		    => No default export
+4.Switch:
+	To render a single Component, wrap all the routes inside the Switch Component.
+
+		A <Switch> looks through all its children <Route>
+          elements and renders the first one whose path
+          matches the current URL. Use a <Switch> any time
+          you have multiple routes, but you want only one
+          of them to render at a time
+Note:
+react-router-dom is made for "Web application"  ReactJS
+react-router-native is made for "react native mobile apps" React Native
+
+react-router :
+			exports the core components and functions. 
+react-router-dom :
+			exports DOM-aware components, like <Link> (which renders an <a>)
+
+===========================================================================================
+
+Topics: Props Validation , Events & Manipulating State, condtional Rendering,  List and Keys
+        
+Events:
+=> Change in the state of an Object is called EVENT.
+=> EVENT Handling:The process of reacting over the events is called as
+	EVENT Handling.
+=> Event Handlers : JS handles the HTML events via Event handlers.
+=> Ex: onClick, onSubmit, onChange etc..
+
+=> React has its own events handling s/m and its also known as Synthetic events (e).
+	Synthetic events is a cross browser wrapper of the browser native element.
+	
+=> React events named with camelCase
+=>In HTML,
+			onclick = "showMessage(); return false;"
+  
+  In React JS,
+			onClick = {showMessage}
+			
+			preventDefault event explicitly for the default behaviour.
+			ex: function Action()
+				{function handleClick(e){
+				e.preventDefault();
+				}			
+			
+		Note: 'e' is a synthetic event.
+			
+class ==== className
+for === htmlFor
+
+
+eg: 
+			export default class Event extends Component {
+				constructor(props) {
+					super(props)
+				
+					this.state = {
+						 companyname: ''
+					}
+				}
+				
+				changeText = (event) => {
+			this.setState({
+				companyname: event.target.value
+			})
+				}
+				render() {
+					return (
+						<div>
+							<label htmlFor="name">Enter Company Name:</label>
+							<input type="text" id="name" onChange={this.changeText.bind(this)} />
+							<h1>You Entered as : {this.state.companyname}</h1>
+						</div>
+					)
+				}
+			}
+
+======================================================================================
+Lifecycle Hooks:
+
+3 phases:
+1.Mounting (once)
+2.Updating (n times update)
+3.UnMounting (only once)
+
+
+1.Mounting:
+
+constructor(props),
+static getDerivedStateFromProps( props,  state),
+render(),
+componentDidMount()
+
+NOTE:
+render() ===> always be called.
+Rest all methods ==> Optional
+
+
+I. constructor(props):
+		=>initialize state
+		=>No Business Logic
+		=>No sideEffects (No API calls like setTimeout/setInterval)
+		=>No setState() is used.
+
+	super(props);==> Initiate the parent constructor method,
+				 ==> it helps to inherit methods from Parent(React.Comp)
+
+2.static getDerivedStateFromProps( props,  state):
+		=> static method
+		=> called after constructor()
+		=> it returns null / return new state
+		=> It takes state as an argument and returns object with 
+			the change in state
+		=>We can set the state of the object based on the initial props
+
+
+
+3. render():
+			=> it is used to write UI Logic
+			=>No sideEffects
+			=>No Business Logic
+
+
+4.componentDidMount():
+			=> called after the component is rendered.
+			=>can write the Business Logic
+			=>can have sideEffects
+			=>when the component is mounted to the 
+			Real DOM this method will be executed.
+			=> can use the setState()
+
+
+	ex:  class Header extends React.Component{
+	
+		constructor(props){
+		 super(props);
+		 this.state = {
+						favouritecolor : 'Blue' } ;
+						
+		static  getDerivedStateFromProps(props,state){
+		return {favouritecolor: props.favcol}; 
+				} }
+			
+			
+		componentDidMount()	{
+							setTimeout(() => {
+							this.setState({favouritecolor:'red'})
+							}, 1000)}
+			
+		render(){
+					return(
+					<h1> My loved color is {this.state.favouritecolor}</h1>
+					
+					)}
+		
+		
+Rendering:
+		<Header  favcol="Red"/>
+			
+====================================================================================
+2.UPDATING Phase:
+
+=> a component will be updated whenever change in component's props and state.
+=> 5 built in methods.
+
+a) static getDerivedStateFromProps( props, state)
+b) shouldComponentUpdate()
+c) render()
+d) getSnapShotBeforeUpdate( prevProps, prevState)
+e) componentDidUpdate( prevProps, prevState, snapshot)
+			
+1.getDerivedStateFromProps(props,state):
+-> first method called before component gets updated.
+
+2.shouldComponentUpdate():
+-> It always return a boolean value  i.e (true: update comp, false: No update)
+	default value is TRUE.
+	
+	ex: shouldComponentUpdate(){
+								return false;
+								}
+	
+	ex: initial its  blue color  
+		updating its red color      
+		
+		return flase;                          return true;
+		o/p: blue color                       o/p: red color
+
+3. render():
+
+4.getSnapShotBeforeUpdate():
+
+-> it has access for props and state before update.
+-> when using getSnapShotBeforeUpdate () always need to include/call 
+   componentDidUpdate() or else Errors
+	 
+->Explanation:
+	=>when the comp is mounting its rendered with favouritecolor as blue.
+	=>when comp has been mounted, a timer changes the state, after one second, 
+	and the favouritecolor will be changed with new color(green).
+	=>this action will trigger the update phase, since my component has	
+	  getSnapShotBeforeUpdate() method, this method is executed. 
+	  and writes a message to empty div
+	=>Then componentDidUpdate() method is executed, writes a message to 
+	another empty div
+
+
+5.componentDidUpdate():
+	=> it is called after the component is updated in the DOM
+	=> we can use this method individually
+
+==================================================================================
+
+3.UNMOUNTING Phase:
+
+removing the component from DOM.
+
+componentWillUnmount():
+
+
+
+=====================================================================================
+Lists:
+
+ex: const lakesList = ["Echo lake", "maud lake", "cascade lake"];
+	function App(lakes){
+						return(
+						<ul>
+						{lakes.map(lake => 
+										<li>{lake}</li>
+										)}</ul>)}
+	Rendering:
+			<App lakes={lakeList}/>
+			
+			
+========================================================
+Fragments:
+Adding list to the group of elements adding without extra node.
+It helps in dealing with the issue of json components
+
+ex: <Lake />
+	<Resort />       class App extends R.Comp{
+						render(){
+						return(
+						
+						<React.Fragment>    OR       <>       //Fragments
+						<Lake />                         <Lake /> 
+						<Resort />                      <Resort />
+						</React.Fragment>            </>
+						)}
+===========================================================
+this.state ={
+name: '',
+value: ''
+}		
+
+event.target.name
+event.target.value
+
+[] around property name while updating the state using this.setState()
+=======================================================================
+Conditional Rendering: 
+=> rendering the values based on there properties.
+
+function lake({name}){
+return(<div>
+<h1> Visit the LAke {name} </h1> </div>)
+}
+
+function SkiResort({name}){
+return(<div>
+<h1> Visit the Resort {name} </h1> </div>)
+}
+
+function App(props) {
+					ifÂ (props.seasonÂ ===Â 'summer')Â {
+               Â Â Â returnÂ <LakeÂ name="jennyÂ Lake"Â />
+                  }Â 
+				  elseÂ if(props.season === 'winter'){
+                  returnÂ <SkiresortÂ nameÂ ="Â JMRÂ !!"Â />
+                 Â }
+
+<App season = "" />
+==============================================================================
+props drilling:
+
+Context-API:
+
+3 steps:
+1.create a context api
+		React.createContext();
+	eg: const userContext = React.createContext();
+	
+	=>The context object has Provider & Consumer
+	
+	eg: const userProvider = userContext.Provider;
+	    const userConsumer = userContext.Consumer;
+		
+		Export in the  form of objects.
+		
+		export {userProvider, userConsumer}
+		
+2.userProvider should be a parent.
+
+	attributes  used is :  value =""
+	
+3.how to access the value to child from parent.
+
+app.js    app.js
+	A     p1
+	      p2
+	B
+	C
+========================================================================================
+
+Higher Order Components: (HOC)
+=>Higher order components are JavaScript functions used for adding additional 
+functionalities to the existing component. 
+=>These functions are pure, which means they are receiving data and returning
+ values according to that data.
+=>A higher-order component is a function that takes a component and 
+	returns a new component.
+=> Higher order functions are re-run with different data input.
+=>HOC is wrapping around "normal" component and provide additional data input.
+ It is actually a function that takes one component and returns another component
+	that wraps the original one. 
+	
+syntax: const EnhancedComponent = higherOrderComponent(WrappedComponent);
+
+=>Note: a component transforms props into UI, a higher-order component 
+   transforms a component into another component.
+   
+=> HOCs are common in third-party React libraries
+=>We donât modify or mutate components. We create new ones.
+=>A HOC is used to compose components for code reuse.
+=>A HOC is a pure function. It has no side effects, returning only a new 
+	component.
+
+==================================================================================
+Axios: 
+=>promise based HTTP request Library which allows us to 
+	interface with REST API
+=> Before  we had HTTP Interceptors,
+Now on Axios, we can cancel request and Intercept the request
+
+=>library : npm install axios --save
+=> handle Request
+=> handle requests from client to server
+
+=> Http Methods:
+		CRUD :
+		C => Create ===(POST)
+		R => Read === (GET)
+		U => Update === (PUT)
+		D => Delete ==(DELETE)
+	
+Steps: (GET Request : PersonList.js)
+1. create a rcc with state &  import axios
+2. Add componentDidMount() and use axios.get()
+3. use the axios.get() method and setState() the methods.
+4. then render the person with the map function
+
+
+
+Steps: ( POST Request :PersonInput.js)
+1.create an rcc with state 
+2.No need of Lifecycle methods  i.e No componentDidMount
+3.to handle a form event need to add the handlers
+4. create the form and handle the onChange
+
+
+
+
+
+
+
+Steps: (DELETE Request : PersonInputDelete.js  )	
+
+1. Use the axios.delete()
+2.for the path need to interpolate the 
+	users/${this.state.id}
+3. change the state to id, with value as 0
+4. change the form type, label & name attribute
+5. change the handle change value with id
+6. Can remove the new object and remove the user payloads
+
+
+
+
+1.axios.get()
+2.axios.post(url, data to be passed):
+	It Returns promise, it is handled with then and catch
+	
+
+======================================================================================
+React Hooks:
+=> Its a collection of functions which is used by the React for its 
+	functional components.
+
+or
+
+Hook is a function that allows you to add the functionality for react component.
+
+
+Using the React Hooks in functional component:
+	->no state
+	->no use of render
+	->use of arrow functions
+=> all hooks start with keyword "use"
+
+few React Hooks:
+					useState()
+					useEffect
+					useReducer
+					useRef
+					useContext
+
+
+=> we need to import the react hooks from react library  'react'
+
+
+1.useState()
+=> import React, {useState} from 'react';
+		helps to manage the state in functional components
+		
+		
+	class component: 	this.state = {
+						name: 'Tony' 
+						}
+		
+		setState()
+		
+const [stateValue, function that is used to change the state value] 
+													= useState({initial value});
+	
+	functional Comp :
+						const [year, setYear] = useState(2020);
+	
+1. using useState():
+=====================================================================================
+useEffect():
+			It helps to perform the side effects in functional components.
+			import React, {useState,useEffect} from 'react';
+
+Syntax:		useEffect(() => {
+								//code to be executed
+							});
+			
+	Note: It takes callback function as a parameter.
+
+Note:
+		useEffect replaces all the below three methods from Lifecycle:
+			1.componentDidMount()
+			2.componentDidUpdate()
+			3.componentWillUnmount()
+
+
+			
+1.componentDidMount():
+
+	useEffect(() => {
+						//executed when component is mounted
+	}, []);
+
+=> callback function & empty array
+=> executed once
+
+2.componentDidUpdate():
+
+	useEffect(() => {
+	
+			//executed when the state is updated
+	
+	}, [firstName]);                   //[firstName]  dependancy array
+	
+=> same update : [firstName,show]
+
+=> Different update at different time
+		useEffect( ()=> {}  ,[firstName])
+		
+		useEffect( ()=> {} ,[show])
+		
+		
+3.componentWillUnmount();
+
+	->useEffect can return a function.
+	->And that function will be executed when the component will be unmounted
+
+useEffect(() => {
+				//executed when the state is updated
+				return() => {
+				clg("unmounting the component is done");
+				}
+				
+				}, []);
+
+
+Note: useEffect will be called after the Renders.
+	  It mainly helps in SMART RENDERING.
+	  It doesn't allow the unnecessary Triggering.
+
+
+==========================================================================================================
+
+useReducer():
+It takes a current state and returns the new state.
+
+If checked ======false ===return as======> opposite as true
+
+
+
+
+==============================================================
+bootstrap 
+material UI
+
+npm install react-bootstrap bootstrap
+
+==============================================================
+Refs:
+
+Refs provide a way to access DOM nodes or React elements created in the render method.
+=>
+	use cases for refs:
+		1.Managing focus, text selection, or media playback.
+		2.Triggering imperative animations.
+		3.Integrating with third-party DOM libraries.
+=>You may not use the ref attribute on function components
+		because they donât have instances.
+		
+ 1. create a ref object:
+		this.myRef = React.createRef();
+
+ 2. <div ref={this.myRef}>
+			Refs
+	</div>
+	
+	
+useRef() : 
+React Hooks for rfc
+	const myRef = useRef(initialvalue);
+
+myRef.current (to access the current value)
+<input ref={myRef}/>
+
+=================================================================================
+Context-API:
+-------------
+Context:I t Provides a way to pass data through the component tree
+without having to pass props down manually at every level.
+
+Its very light weight compared to Redux.
+
+1.create a context:
+const Context = React.createContext();
+
+
+2.	Provider == parent <Context.Provider>
+3.	Consumer == Child   <Context.Consumer>
+	
+	
+case 1: Default value can be set.
+ex:
+		const UserContext = React.createContext('Sandy');
+	
+	//No need to call the UserProvider directly call Component
+		// <UserProvider value="Smitha">
+     <ComponentC/>
+     // </UserProvider>
+	
+=====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ErrorBoundary:
+React Components that catch the JS Error in their child component tree, 
+log there error &  display as a fallback UI.
+
+
+<ErrorBoundary>
+	<Home/>
+</ErrorBoundary>
+
+2 methods:
+1.static getDerivedStateFromError(error){   }
+
+	=>it is used to render the fallback UI after an error  is thrown
+	-> It takes error msg  as an input
+	-> return New State
+	
+ static getDerivedStateFromError(error) {
+		return (
+				hasError : true
+				//Logic
+				)
+	
+
+2.componentDidCatch(error, errorInfo){ }
+
+=> it is used to log the error information
+
+	componentDidCatch(error, errorInfo) {
+			clg(error);
+			clg(errorInfo);
+			}
+
+Object of Error: new Error("error")
+				 throw new Error("error")
+
+Note:
+
+1.catch the erros while rendering in lifecycle, & 
+	in the constructor with the state values of the tree
+	
+2. you can't the error using the event handlers, we can use  try & catch 
+==============================================================================
+Styling with React JS:
+
+1. Regular  CSS Stylesheets
+2. inline Styling
+3. CSS Modules
+4. cSS in JS Libraries
+===================================================================
+Pure Components:
+
+	second way to create class component i.e extending the pure components
+
+Def: A Pure Component implements shouldComponentUpdate with a shallow 
+		prop & state comparison
+
+	SC of prevState with currentState
+	SC of prevProps with currentProps
+
+Note:
+	1.In SC if there is a difference then the component will re-render
+	2.If a ParentComponent is a PureComponent then the component doesn't
+	re-render
+
+Why PC:
+	prevents unnecessary render give performance boost.
+	Never mutate Object or Array in props or state.
+	Always return a new object or an array which reflects the new state.
+If there is no difference the component is not re-rendered - performance boost
+
+Difference b/w Component & pure component
+
+Regular Component: doesn't implement the shouldComponentUpdate method. 
+it always returns true by default.
+
+Pure Component: implements shouldComponentUpdate with shallow props &  
+				state comparison.
+
+
+===============================================================================
+Memo:
+
+	pure Components works with CC So for  FC we use Memo
+
+React.memo was introduced in React 16.6 Version.
+If props are not changing its better to avoid the memo.
+Basically it accepts the HOC Components.
+
+	React.memo(MemoComp)
+	
+==============================================
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+=======================================================================
+src -> components 
+				->functional 
+							=> Person.js
+                -> Classes
+						 => Car.js	
+						 => CompProps.js
+
+                
+Firebase : maintains your data in table format & it accepts only JSON.
+
+SQL: 	data is in table format
+NoSQL: data is in object format. (its also collection)
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+MVC = Model View Controller
+		React is V 'View'
+		architecture (Redux or Flux)
+
+React is a JS library used to build user Interfaces for web Application.
+
+key points:
+=> open source JS Library
+=>Focus only on UI
+=>Not a framework
+
+
+		React ==> Web Application                  Angular => web Application
+		React Native ==> Mobile Application        Ionic => mobile Application		
+	
+
+angular 8(Framework)== real DOM / browser DOM
+React JS (Library) == virtual DOM --- real DOM
+
+framework: [Angular]
+	collection of librariers, functions
+	more rules
+	only do certain task
+	it calls ur code
+ex: Angular, Vue Js, Flutter	
+	
+	
+Library: [react JS]
+	collection of reusable apps / collection of codes(i.e class & interfaces)
+	less rules
+	only do single task
+	full control when it is calling a method.
+ex: React , Ember, backbone, Jquery	
+
+user Interfaces :
+		Basically what the user sees.
+		It uses the components for building
+	
+NativeScript : to create IOS & android Applications using JS.
+
+			Native Apps (faster)
+			hybrid Apps  (slower)
+			
+		Native App ==> React Native
+					   Native Script
+						
+SSR :
+	first page loads, we will get the skeleton,  then the actual content occurs.
+
+
+Node Js: Runtime Environment which helps the JS code to run on Server Side.
+		 
+		
+		npm(node package manager) ==> collection of libraries
+	
+		
+=> cross platfrom , runtime environment, helps to run the JS code outside browser
+	it helps run the code  on the server side
+	
+	It uses V8 engine
+	
+cross platfrom:
+				runned on any operating Systems.
+				supports the Asynchronous callback
+	
+		
+PlayStore: (Developer and User) 
+install application, anyone can install, google developer, users can use it, 
+developer can add apps	
+					
+npm: (Developer and Developer)
+install libraries, anyone can install, developer developed, developer used,
+developer can push/pull
+
+
+Note:
+npm: creates the same version which was installed globally
+npx: creates the latest version & downloads the latest  plugins
+
+npm installation: 2 types 
+globally : npm install bootstrap -g 
+locally  : npm install bootstrap
+
+node -v
+npm -v
+
+
+=====================================================================================
+
+React (react@17): It is a open source JS library to develop a user interface on
+				web application
+					It is component based.
+					its funtionality is utilized in Web and Mobile App
+
+ReactDOM (react-dom@17): Its a glue b/w React and the DOM.
+						 It helps to display the react component in DOM
+						funtionality is utilized in web apps.
+		
+note:
+
+	React - the React top level API
+	React DOM - adds DOM-specific methods
+	Babel - a JavaScript compiler that lets us use ES6+ in old browsers
+
+
+
+		
+React Native : Its a Technology to build mobile Applications on Android & IOS
+
+====================================================================================
+
+SPA: (React)                                      MPA:
+
+	only one html								multiple html pages
+	content is rendered on client               content is rendered on server
+
+
+===================================================================================
+
+
+<h1>Hello World</h1>
+
+React.createElement("h1", null, "Hello World")
+
+Assignment 1: (code in js)
+<ul> Languages:                      Languages:
+<li>JavaScript</li>                  . JavaScript
+<li>React JS</li>				     . react jS
+</ul>
+
+===========================================================================
+JSX:(javascript xml) 
+	
+	-> JSX tags have a tag name, attributes & children
+    -> JSX makes code simpler & elegant
+	-> Later JSX transpiles to the pure JS
+	
+				const test = <h1>Hello World</h1>
+
+without JSX:
+			const ele = React.createElement("h1", null,"Hello world");
+                        
+			Syntax:	React.createElement("Specifies html tag", Optional properties,"Chldren for the tag");
+
+Note:
+	second parameter is always a key & value pair
+    ex: {id:'demo', className:'dummyClass}
+
+with JSX:
+			const ele = <h1 className="demo"> Hello World</h1>;
+			
+Note:
+	class => className
+	for => htmlFor
+
+camelCase Property Naming Convention:
+	onclick => onClick
+	tabindex => tabIndex
+
+Updated react link on changes: 
+https://github.com/facebook/react/issues/13525
+
+=======================================================================
+Installation Adds:
+
+1.Development Server (lighweight) ==> server name: webpack-dev-server (By Default)
+2.Webpack (for Bundling the files)
+3.Babel (for Compiler)
+4.All the 3rd party libraries
+
+
+
+DOM Elements ==  React.createElement()
+React Elements == JSX
+
+React Elements == JSX
+			==============babel===========
+					DOM elements = React.createElement()
+
+
+==========================================================================
+Components:
+
+Basically Application has 5 components:
+	1.Header
+	2.SideNav --> LeftSide & RightSide
+	3.Main Content
+	4.Footer
+	5.Root(App)Component
+
+=> They describe a part of the user interface
+=> They are the building blocks of the UI
+=> Re-usuable & can be nested inside the other components
+
+
+ Two types:
+ 1.Function components / state-less
+ 2.Class Components   / state - full
+ 
+ 1.Functional Components:
+   *) JS Functions,return regular html.
+ 
+		properties(props)-----> JS Function ----> HTML (JSX)
+ 
+  lets see example
+ 
+ 2.Class Components:
+  *) class extends the component class with render & return
+	
+ -> They are ES6 class.
+		
+		properties(props)-----> ES6 Classes ----> HTML (JSX)
+								 (state)
+ lets see example
+ 
+ i)Creating a Class Components:
+ ->Component name should be in Uppercase
+ ->Extends a React.Component
+ ->component requires a render()
+ -> and this method returns HTML
+ 
+ 
+ ii.Component constructor in Class Component:
+ ->constructor() function will be called when the component gets initiated.
+ ->Inside constructor(props) function you can initiate the properties.
+ ->The component property should be kept in a object called State
+ ->super() statement: 
+		It executes the  parent component constructor function, the component has
+		access to all the functions of Parent Component.(React.Component)
+
+			ex: constructor(){
+				super();
+				}
+				
+Difference:
+
+Functional Comp                         class Comp
+
+->simple functions                    ->More feature rich
+->use as much as possible			  ->Maintain own private data - state	
+->Absence of this keyword			  ->Complex UI Logic
+->solution without using state		  ->Stateful/Smart/Container
+->Mainly responsible for UI			  
+->Stateless/Dumb/Presentational				
+				
+				
+				
+				
+				
+=================================================================================
+ Modules: exports and imports
+=> split JS code into multiple modules
+=> can import or export from one page of js file to another.
+ 
+Eg: a = 10; 
+		  Export: export a;      	 // have the same name while importing  ==> import a ;    
+				  export default a;  //can have any name while importing  ==>import books;
+ 
+IMPORT:
+		import number from ' /path';                     OR
+		import {Component} from '/path ' ;               OR
+		import {Component as aliasname} from ' ';
+		ex: import {Person alias Employee} from ''
+
+				<Employee />
+
+
+case 1: if export default a;
+		   import number from ' ' ;
+      (if export is with the default keyword, we can have any name for importing)
+ 
+ 
+ 
+case 2:
+		if export a;
+		   export add;      // exporting a variable      const add = (<div> <Person/> </>)														
+		   export App;
+		   	   
+	import add from  '';         			//render: {add}
+	import {add as add1} from '';			//render: {add1}
+	
+if export is with a name, then we can import with the same name using "as" keyword
+which becomes a alias name & then use alias name only to render.
+
+
+case 3:  a=10;
+	     export a;
+		 export add;
+		 export App;
+		 
+	import * as Applications from '';
+		Applications.a;
+		Applications.add();
+		
+If we have exported many values then if we want to import all we use "*" followed by 
+alias name, later we can retrieve them individually using the alias name.
+
+==========================================================================================
+Props:
+
+->props are the object in React that contains properties about the components.
+->It can display the dynamic data within components.
+->React uses 'props' to pass the attributes from parent component to child component. 
+->Props are Immutable
+
+-> React props,
+				function arguments in JS
+				Attributes in HTML
+				
+	1.send the props inside the component  <Person name="Anita" />
+	2. pass data from one component to another component   
+				class CarShed extends R.C {
+				render() {
+					return 	<Car brand="Audi"/>}}
+	
+	3. props as an object
+
+
+
+	{props.library} ===>     library = "React JS"	 
+	{props.message} ===>     message = "Hello"
+    {props.number}  ===>     <Age  number = 2 />     wrong way	
+							  number = {2}           right way
+ 
+Note: 
+ function => props.
+ class => this.props
+ 
+ 
+=========================================================================================
+Assignment: props as destructuring (Add the data dynamically)
+
+function Hello({library, Message}){
+return (
+<div>
+<h1>Welcome to {library}</h1>
+<p> {Message}</p>)
+}
+
+=======================================================================================
+props v/s state:
+
+props:
+		props get passed to the component
+		Function Parameters
+		props are immutable
+		props :- Functional Components
+		this.props :- Class Components
+
+state:
+		state management within the component
+		variables declared in the function body
+		state can be changed
+		useState Hook:- Functional Components
+		this.state:- Class Components
+=======================================================================================
+state:
+
+-> you can store the property values that belongs to the component
+-> when state object changes the component will re-render
+-> can create the dynamic and  interactive components
+-> State is private, it shouldn't be manipulated outside
+-> state is used in render()
+-> state is not used with static components
+->State can only be set inside the constructor
+
+When to use State....?
+
+ message: 'Welcome User' ==========> message:' Thank you for visiting'
+
+this.state = {
+				color:"",
+				brand: ""
+				message: 'Welcone User'
+				}
+
+{this.state.color}, {this.state.brand}, {this.state.message}
+
+to change the state Object:   
+							this.setState()
+
+========================================================================
+Props Validation:
+
+Property name: PropTypes 
+
+Step 1: import PropTypes from 'prop-types' ;
+
+step 2: App.propTypes
+
+		Eg: 		import React, { Component } from 'react';
+					import PropTypes from 'prop-types';
+
+					export default class Greeting extends Component {
+						render() {
+							return (
+								<div>
+									<h1>Hello Mr/ Ms {this.props.name}</h1>
+									<h2>Age: {this.props.age}</h2>
+								</div>
+							)
+						}
+					}
+
+					Greeting.propertyType = {
+						name: PropTypes.string,
+						age: PropTypes.number
+					}
+
+					// Adding the default props
+					//It is called only when there are no props inside the components
+					Greeting.defaultProps = {
+						name: "Stranger!!!",
+						age: "Stranger  has no Age!!"
+					}
+
+=======================================================================================
+Routing:
+
+-> Installation:    npm install react-router-dom --save
+
+->React Router Components:
+	1.Browser Router
+	2.Route
+	3.Link
+	4.Switch
+	
+1. Browser Router: 
+->Its a router implementation which uses the HTML 5 
+ history API(pushState,popState events)
+->helps to keep the UI in sync with URL
+->Parent Component which stores all other components
+		
+2. Route:
+	-> its a coditionally shown component
+	-> It renders  some UI when its path matches with the current URL
+	
+3. Link: Its a component used to create links to different routes and implement
+ the navigation around the application.
+			
+Note:		=> In <a> it allows to refreshing of a page
+		    => No default export
+4.Switch:
+	To render a single Component, wrap all the routes inside the Switch Component.
+
+		A <Switch> looks through all its children <Route>
+          elements and renders the first one whose path
+          matches the current URL. Use a <Switch> any time
+          you have multiple routes, but you want only one
+          of them to render at a time
+Note:
+react-router-dom is made for "Web application"  ReactJS
+react-router-native is made for "react native mobile apps" React Native
+
+react-router :
+			exports the core components and functions. 
+react-router-dom :
+			exports DOM-aware components, like <Link> (which renders an <a>)
+
+===========================================================================================
+
+Topics: Props Validation , Events & Manipulating State, condtional Rendering,  List and Keys
+        
+Events:
+=> Change in the state of an Object is called EVENT.
+=> EVENT Handling:The process of reacting over the events is called as
+	EVENT Handling.
+=> Event Handlers : JS handles the HTML events via Event handlers.
+=> Ex: onClick, onSubmit, onChange etc..
+
+=> React has its own events handling s/m and its also known as Synthetic events (e).
+	Synthetic events is a cross browser wrapper of the browser native element.
+	
+=> React events named with camelCase
+=>In HTML,
+			onclick = "showMessage(); return false;"
+  
+  In React JS,
+			onClick = {showMessage}
+			
+			preventDefault event explicitly for the default behaviour.
+			ex: function Action()
+				{function handleClick(e){
+				e.preventDefault();
+				}			
+			
+		Note: 'e' is a synthetic event.
+			
+class ==== className
+for === htmlFor
+
+
+eg: 
+			export default class Event extends Component {
+				constructor(props) {
+					super(props)
+				
+					this.state = {
+						 companyname: ''
+					}
+				}
+				
+				changeText = (event) => {
+			this.setState({
+				companyname: event.target.value
+			})
+				}
+				render() {
+					return (
+						<div>
+							<label htmlFor="name">Enter Company Name:</label>
+							<input type="text" id="name" onChange={this.changeText.bind(this)} />
+							<h1>You Entered as : {this.state.companyname}</h1>
+						</div>
+					)
+				}
+			}
+
+======================================================================================
+Lifecycle Hooks:
+
+3 phases:
+1.Mounting (once)
+2.Updating (n times update)
+3.UnMounting (only once)
+
+
+1.Mounting:
+
+constructor(props),
+static getDerivedStateFromProps( props,  state),
+render(),
+componentDidMount()
+
+NOTE:
+render() ===> always be called.
+Rest all methods ==> Optional
+
+
+I. constructor(props):
+		=>initialize state
+		=>No Business Logic
+		=>No sideEffects (No API calls like setTimeout/setInterval)
+		=>No setState() is used.
+
+	super(props);==> Initiate the parent constructor method,
+				 ==> it helps to inherit methods from Parent(React.Comp)
+
+2.static getDerivedStateFromProps( props,  state):
+		=> static method
+		=> called after constructor()
+		=> it returns null / return new state
+		=> It takes state as an argument and returns object with 
+			the change in state
+		=>We can set the state of the object based on the initial props
+
+
+
+3. render():
+			=> it is used to write UI Logic
+			=>No sideEffects
+			=>No Business Logic
+
+
+4.componentDidMount():
+			=> called after the component is rendered.
+			=>can write the Business Logic
+			=>can have sideEffects
+			=>when the component is mounted to the 
+			Real DOM this method will be executed.
+			=> can use the setState()
+
+
+	ex:  class Header extends React.Component{
+	
+		constructor(props){
+		 super(props);
+		 this.state = {
+						favouritecolor : 'Blue' } ;
+						
+		static  getDerivedStateFromProps(props,state){
+		return {favouritecolor: props.favcol}; 
+				} }
+			
+			
+		componentDidMount()	{
+							setTimeout(() => {
+							this.setState({favouritecolor:'red'})
+							}, 1000)}
+			
+		render(){
+					return(
+					<h1> My loved color is {this.state.favouritecolor}</h1>
+					
+					)}
+		
+		
+Rendering:
+		<Header  favcol="Red"/>
+			
+====================================================================================
+2.UPDATING Phase:
+
+=> a component will be updated whenever change in component's props and state.
+=> 5 built in methods.
+
+a) static getDerivedStateFromProps( props, state)
+b) shouldComponentUpdate()
+c) render()
+d) getSnapShotBeforeUpdate( prevProps, prevState)
+e) componentDidUpdate( prevProps, prevState, snapshot)
+			
+1.getDerivedStateFromProps(props,state):
+-> first method called before component gets updated.
+
+2.shouldComponentUpdate():
+-> It always return a boolean value  i.e (true: update comp, false: No update)
+	default value is TRUE.
+	
+	ex: shouldComponentUpdate(){
+								return false;
+								}
+	
+	ex: initial its  blue color  
+		updating its red color      
+		
+		return flase;                          return true;
+		o/p: blue color                       o/p: red color
+
+3. render():
+
+4.getSnapShotBeforeUpdate():
+
+-> it has access for props and state before update.
+-> when using getSnapShotBeforeUpdate () always need to include/call 
+   componentDidUpdate() or else Errors
+	 
+->Explanation:
+	=>when the comp is mounting its rendered with favouritecolor as blue.
+	=>when comp has been mounted, a timer changes the state, after one second, 
+	and the favouritecolor will be changed with new color(green).
+	=>this action will trigger the update phase, since my component has	
+	  getSnapShotBeforeUpdate() method, this method is executed. 
+	  and writes a message to empty div
+	=>Then componentDidUpdate() method is executed, writes a message to 
+	another empty div
+
+
+5.componentDidUpdate():
+	=> it is called after the component is updated in the DOM
+	=> we can use this method individually
+
+==================================================================================
+
+3.UNMOUNTING Phase:
+
+removing the component from DOM.
+
+componentWillUnmount():
+
+
+
+=====================================================================================
+Lists:
+
+ex: const lakesList = ["Echo lake", "maud lake", "cascade lake"];
+	function App(lakes){
+						return(
+						<ul>
+						{lakes.map(lake => 
+										<li>{lake}</li>
+										)}</ul>)}
+	Rendering:
+			<App lakes={lakeList}/>
+			
+			
+========================================================
+Fragments:
+Adding list to the group of elements adding without extra node.
+It helps in dealing with the issue of json components
+
+ex: <Lake />
+	<Resort />       class App extends R.Comp{
+						render(){
+						return(
+						
+						<React.Fragment>    OR       <>       //Fragments
+						<Lake />                         <Lake /> 
+						<Resort />                      <Resort />
+						</React.Fragment>            </>
+						)}
+===========================================================
+this.state ={
+name: '',
+value: ''
+}		
+
+event.target.name
+event.target.value
+
+[] around property name while updating the state using this.setState()
+=======================================================================
+Conditional Rendering: 
+=> rendering the values based on there properties.
+
+function lake({name}){
+return(<div>
+<h1> Visit the LAke {name} </h1> </div>)
+}
+
+function SkiResort({name}){
+return(<div>
+<h1> Visit the Resort {name} </h1> </div>)
+}
+
+function App(props) {
+					ifÂ (props.seasonÂ ===Â 'summer')Â {
+               Â Â Â returnÂ <LakeÂ name="jennyÂ Lake"Â />
+                  }Â 
+				  elseÂ if(props.season === 'winter'){
+                  returnÂ <SkiresortÂ nameÂ ="Â JMRÂ !!"Â />
+                 Â }
+
+<App season = "" />
+==============================================================================
+props drilling:
+
+Context-API:
+
+3 steps:
+1.create a context api
+		React.createContext();
+	eg: const userContext = React.createContext();
+	
+	=>The context object has Provider & Consumer
+	
+	eg: const userProvider = userContext.Provider;
+	    const userConsumer = userContext.Consumer;
+		
+		Export in the  form of objects.
+		
+		export {userProvider, userConsumer}
+		
+2.userProvider should be a parent.
+
+	attributes  used is :  value =""
+	
+3.how to access the value to child from parent.
+
+app.js    app.js
+	A     p1
+	      p2
+	B
+	C
+========================================================================================
+
+Higher Order Components: (HOC)
+=>Higher order components are JavaScript functions used for adding additional 
+functionalities to the existing component. 
+=>These functions are pure, which means they are receiving data and returning
+ values according to that data.
+=>A higher-order component is a function that takes a component and 
+	returns a new component.
+=> Higher order functions are re-run with different data input.
+=>HOC is wrapping around "normal" component and provide additional data input.
+ It is actually a function that takes one component and returns another component
+	that wraps the original one. 
+	
+syntax: const EnhancedComponent = higherOrderComponent(WrappedComponent);
+
+=>Note: a component transforms props into UI, a higher-order component 
+   transforms a component into another component.
+   
+=> HOCs are common in third-party React libraries
+=>We donât modify or mutate components. We create new ones.
+=>A HOC is used to compose components for code reuse.
+=>A HOC is a pure function. It has no side effects, returning only a new 
+	component.
+
+==================================================================================
+Axios: 
+=>promise based HTTP request Library which allows us to 
+	interface with REST API
+=> Before  we had HTTP Interceptors,
+Now on Axios, we can cancel request and Intercept the request
+
+=>library : npm install axios --save
+=> handle Request
+=> handle requests from client to server
+
+=> Http Methods:
+		CRUD :
+		C => Create ===(POST)
+		R => Read === (GET)
+		U => Update === (PUT)
+		D => Delete ==(DELETE)
+	
+Steps: (GET Request : PersonList.js)
+1. create a rcc with state &  import axios
+2. Add componentDidMount() and use axios.get()
+3. use the axios.get() method and setState() the methods.
+4. then render the person with the map function
+
+
+
+Steps: ( POST Request :PersonInput.js)
+1.create an rcc with state 
+2.No need of Lifecycle methods  i.e No componentDidMount
+3.to handle a form event need to add the handlers
+4. create the form and handle the onChange
+
+
+
+
+
+
+
+Steps: (DELETE Request : PersonInputDelete.js  )	
+
+1. Use the axios.delete()
+2.for the path need to interpolate the 
+	users/${this.state.id}
+3. change the state to id, with value as 0
+4. change the form type, label & name attribute
+5. change the handle change value with id
+6. Can remove the new object and remove the user payloads
+
+
+
+
+1.axios.get()
+2.axios.post(url, data to be passed):
+	It Returns promise, it is handled with then and catch
+	
+
+======================================================================================
+React Hooks:
+=> Its a collection of functions which is used by the React for its 
+	functional components.
+
+or
+
+Hook is a function that allows you to add the functionality for react component.
+
+
+Using the React Hooks in functional component:
+	->no state
+	->no use of render
+	->use of arrow functions
+=> all hooks start with keyword "use"
+
+few React Hooks:
+					useState()
+					useEffect
+					useReducer
+					useRef
+					useContext
+
+
+=> we need to import the react hooks from react library  'react'
+
+
+1.useState()
+=> import React, {useState} from 'react';
+		helps to manage the state in functional components
+		
+		
+	class component: 	this.state = {
+						name: 'Tony' 
+						}
+		
+		setState()
+		
+const [stateValue, function that is used to change the state value] 
+													= useState({initial value});
+	
+	functional Comp :
+						const [year, setYear] = useState(2020);
+	
+1. using useState():
+=====================================================================================
+useEffect():
+			It helps to perform the side effects in functional components.
+			import React, {useState,useEffect} from 'react';
+
+Syntax:		useEffect(() => {
+								//code to be executed
+							});
+			
+	Note: It takes callback function as a parameter.
+
+Note:
+		useEffect replaces all the below three methods from Lifecycle:
+			1.componentDidMount()
+			2.componentDidUpdate()
+			3.componentWillUnmount()
+
+
+			
+1.componentDidMount():
+
+	useEffect(() => {
+						//executed when component is mounted
+	}, []);
+
+=> callback function & empty array
+=> executed once
+
+2.componentDidUpdate():
+
+	useEffect(() => {
+	
+			//executed when the state is updated
+	
+	}, [firstName]);                   //[firstName]  dependancy array
+	
+=> same update : [firstName,show]
+
+=> Different update at different time
+		useEffect( ()=> {}  ,[firstName])
+		
+		useEffect( ()=> {} ,[show])
+		
+		
+3.componentWillUnmount();
+
+	->useEffect can return a function.
+	->And that function will be executed when the component will be unmounted
+
+useEffect(() => {
+				//executed when the state is updated
+				return() => {
+				clg("unmounting the component is done");
+				}
+				
+				}, []);
+
+
+Note: useEffect will be called after the Renders.
+	  It mainly helps in SMART RENDERING.
+	  It doesn't allow the unnecessary Triggering.
+
+
+==========================================================================================================
+
+useReducer():
+It takes a current state and returns the new state.
+
+If checked ======false ===return as======> opposite as true
+
+
+
+
+==============================================================
+bootstrap 
+material UI
+
+npm install react-bootstrap bootstrap
+
+==============================================================
+Refs:
+
+Refs provide a way to access DOM nodes or React elements created in the render method.
+=>
+	use cases for refs:
+		1.Managing focus, text selection, or media playback.
+		2.Triggering imperative animations.
+		3.Integrating with third-party DOM libraries.
+=>You may not use the ref attribute on function components
+		because they donât have instances.
+		
+ 1. create a ref object:
+		this.myRef = React.createRef();
+
+ 2. <div ref={this.myRef}>
+			Refs
+	</div>
+	
+	
+useRef() : 
+React Hooks for rfc
+	const myRef = useRef(initialvalue);
+
+myRef.current (to access the current value)
+<input ref={myRef}/>
+
+=================================================================================
+Context-API:
+-------------
+Context:I t Provides a way to pass data through the component tree
+without having to pass props down manually at every level.
+
+Its very light weight compared to Redux.
+
+1.create a context:
+const Context = React.createContext();
+
+
+2.	Provider == parent <Context.Provider>
+3.	Consumer == Child   <Context.Consumer>
+	
+	
+case 1: Default value can be set.
+ex:
+		const UserContext = React.createContext('Sandy');
+	
+	//No need to call the UserProvider directly call Component
+		// <UserProvider value="Smitha">
+     <ComponentC/>
+     // </UserProvider>
+	
+=====================================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ErrorBoundary:
+React Components that catch the JS Error in their child component tree, 
+log there error &  display as a fallback UI.
+
+
+<ErrorBoundary>
+	<Home/>
+</ErrorBoundary>
+
+2 methods:
+1.static getDerivedStateFromError(error){   }
+
+	=>it is used to render the fallback UI after an error  is thrown
+	-> It takes error msg  as an input
+	-> return New State
+	
+ static getDerivedStateFromError(error) {
+		return (
+				hasError : true
+				//Logic
+				)
+	
+
+2.componentDidCatch(error, errorInfo){ }
+
+=> it is used to log the error information
+
+	componentDidCatch(error, errorInfo) {
+			clg(error);
+			clg(errorInfo);
+			}
+
+Object of Error: new Error("error")
+				 throw new Error("error")
+
+Note:
+
+1.catch the erros while rendering in lifecycle, & 
+	in the constructor with the state values of the tree
+	
+2. you can't the error using the event handlers, we can use  try & catch 
+==============================================================================
+Styling with React JS:
+
+1. Regular  CSS Stylesheets
+2. inline Styling
+3. CSS Modules
+4. cSS in JS Libraries
+===================================================================
+Pure Components:
+
+	second way to create class component i.e extending the pure components
+
+Def: A Pure Component implements shouldComponentUpdate with a shallow 
+		prop & state comparison
+
+	SC of prevState with currentState
+	SC of prevProps with currentProps
+
+Note:
+	1.In SC if there is a difference then the component will re-render
+	2.If a ParentComponent is a PureComponent then the component doesn't
+	re-render
+
+Why PC:
+	prevents unnecessary render give performance boost.
+	Never mutate Object or Array in props or state.
+	Always return a new object or an array which reflects the new state.
+If there is no difference the component is not re-rendered - performance boost
+
+Difference b/w Component & pure component
+
+Regular Component: doesn't implement the shouldComponentUpdate method. 
+it always returns true by default.
+
+Pure Component: implements shouldComponentUpdate with shallow props &  
+				state comparison.
+
+
+===============================================================================
+Memo:
+
+	pure Components works with CC So for  FC we use Memo
+
+React.memo was introduced in React 16.6 Version.
+If props are not changing its better to avoid the memo.
+Basically it accepts the HOC Components.
+
+	React.memo(MemoComp)
+	
+==============================================
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+=======================================================================
+src -> components 
+				->functional 
+							=> Person.js
+                -> Classes
+						 => Car.js	
+						 => CompProps.js
+
+                
+Firebase : maintains your data in table format & it accepts only JSON.
+
+SQL: 	data is in table format
+NoSQL: data is in object format. (its also collection)
